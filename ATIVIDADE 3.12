@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+  int numero, i, soma = 0;
+
+  printf("Digite um número inteiro: ");
+  scanf("%d", &numero);
+
+  for (i = 1; i <= numero; i++)
+    soma += i;
+
+  printf("A soma dos números menores que %i é igual a: %i", numero, soma);
+
+  
+return 0;
+}
