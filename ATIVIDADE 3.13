@@ -1,1 +1,18 @@
+#include <stdio.h>
 
+int main() {
+  int ant1 = 0, ant2 = 1,  i, prox, x;
+
+  printf("Digite um número inteiro: ");
+  scanf("%d", &x);
+
+  for (i = 1; i <= x; i++){
+    prox = ant1 + ant2;
+    ant1 = ant2;
+    ant2 = prox;
+    printf("%i\n", prox);
+}
+
+  
+return 0;
+}
