@@ -1,1 +1,16 @@
+#include <stdio.h>
 
+int main() {
+    int x, invertido = 0;
+
+    printf("Digite um número: ");
+    scanf("%d", &x);
+
+    while (x != 0) {
+        invertido = invertido * 10 + x % 10;
+        x /= 10;
+    }
+  
+    printf("Número invertido: %d\n", invertido);
+    return 0;
+}
