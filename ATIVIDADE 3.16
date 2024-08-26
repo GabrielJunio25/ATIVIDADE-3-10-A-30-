@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+
+int i, contador;
+char palavra[100];
+
+int main(void) {
+  printf("Escreva a palavra ou número:");
+  scanf("%s", &palavra);
+  int palindromo = strlen(palavra);
+  for(i = 0; i < palindromo; i++){
+    if(palavra[i] == palavra[palindromo - 1 - i])
+      contador++;
+  }
+  if (contador == palindromo)
+    printf("é palindromo!");
+  else
+    printf("Não é palindromo!");
+  
+  return 0;
+}
