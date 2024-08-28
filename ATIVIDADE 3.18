@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+  int num1, num2, temp, mdc, mmc;
+
+  printf("Digite dois números inteiros: ");
+  scanf("%d %d", &num1, &num2);
+
+  mdc = num1;
+  temp = num2;
+  while (temp != 0) {
+    temp = mdc % temp;
+    mdc = temp;
+  }
+
+  mmc = (num1 * num2) / mdc;
+
+  printf("O MMC é: %d\n", mmc);
+
+  return 0;
+}
