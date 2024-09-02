@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+  int decimal, i = 0, resto;
+  int binario[32]; // Array para armazenar os bits do número binário
+
+  printf("Digite um número decimal: ");
+  scanf("%d", &decimal);
+
+  // Converta o número decimal para binário
+  while (decimal != 0) {
+    resto = decimal % 2;
+    binario[i] = resto;
+    decimal /= 2;
+    i++;
+  }
+
+  // Imprima o número binário (em ordem reversa)
+  printf("O número binário equivalente é: ");
+  for (int j = i - 1; j >= 0; j--) {
+    printf("%d", binario[j]);
+  }
+  printf("\n");
+
+  return 0;
+}
