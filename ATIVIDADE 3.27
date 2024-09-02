@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+int main() {
+  int linhas1, colunas1, linhas2, colunas2;
+
+  printf("Digite o número de linhas da primeira matriz: ");
+  scanf("%d", &linhas1);
+  printf("Digite o número de colunas da primeira matriz: ");
+  scanf("%d", &colunas1);
+  printf("Digite o número de linhas da segunda matriz: ");
+  scanf("%d", &linhas2);
+  printf("Digite o número de colunas da segunda matriz: ");
+  scanf("%d", &colunas2);
+
+  // Verifica se a multiplicação é possível
+  if (colunas1 != linhas2) {
+    printf("A multiplicação de matrizes não é possível.\n");
+    return 1;
+  }
+
+  int matriz1[linhas1][colunas1];
+  int matriz2[linhas2][colunas2];
+  int matrizProduto[linhas1][colunas2];
+
+  printf("\nDigite os elementos da primeira matriz:\n");
+  for (int i = 0; i < linhas1; i++) {
+    for (int j = 0; j < colunas1; j++) {
+      printf("Elemento [%d][%d]: ", i, j);
+      scanf("%d", &matriz1[i][j]);
+    }
+  }
+
+  printf("\nDigite os elementos da segunda matriz:\n");
+  for (int i = 0; i < linhas2; i++) {
+    for (int j = 0; j < colunas2; j++) {
+      printf("Elemento [%d][%d]: ", i, j);
+      scanf("%d", &matriz2[i][j]);
+    }
+  }
+
+  // Multiplicando as matrizes
+  for (int i = 0; i < linhas1; i++) {
+    for (int j = 0; j < colunas2; j++) {
+      matrizProduto[i][j] = 0; // Inicializa o elemento com 0
+      for (int k = 0; k < colunas1; k++) {
+        matrizProduto[i][j] += matriz1[i][k] * matriz2[k][j];
+      }
+    }
+  }
+
+  // Imprimindo a matriz produto
+  printf("\nMatriz resultante da multiplicação:\n");
+  for (int i = 0; i < linhas1; i++) {
+    for (int j = 0; j < colunas2; j++) {
+      printf("%d ", matrizProduto[i][j]);
+    }
+    printf("\n");
+  }
+
+  return 0;
+}
