@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+  char string[100];
+  int vogais = 0;
+
+  printf("Digite uma string: ");
+  fgets(string, 100, stdin);
+
+  // Remove o caractere de nova linha
+  string[strcspn(string, "\n")] = 0;
+
+  // Conta as vogais
+  for (int i = 0; string[i] != '\0'; i++) {
+    if (string[i] == 'a' || string[i] == 'e' || string[i] == 'i' || string[i] == 'o' || string[i] == 'u' ||
+        string[i] == 'A' || string[i] == 'E' || string[i] == 'I' || string[i] == 'O' || string[i] == 'U') {
+      vogais++;
+    }
+  }
+
+  printf("A string tem %d vogais.\n", vogais);
+
+  return 0;
+}
