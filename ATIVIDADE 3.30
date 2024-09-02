@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int myAtoi(const char *str) {
+  int sign = 1;
+  int result = 0;
+  int i = 0;
+
+  // Ignora espaços em branco
+  while (isspace(str[i])) {
+    i++;
+  }
+
+  // Verifica o sinal
+  if (str[i] == '-' || str[i] == '+') {
+    sign = (str[i] == '-') ? -1 : 1;
+    i++;
+  }
+
+  // Converte os dígitos para um número inteiro
+  while (isdigit(str[i])) {
+    result = result * 10 + (str[i] - '0');
+    i++;
+  }
+
+  return result * sign;
+}
+
+int main() {
+  char str[100];
+
+  printf("Digite uma string: ");
+  scanf("%s", str);
+
+  int numero = myAtoi(str);
+
+  printf("O número inteiro equivalente é: %d\n", numero);
+
+  return 0;
+}
